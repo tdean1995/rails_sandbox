@@ -1,0 +1,972 @@
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:07:20 -0500
+
+ActiveRecord::PendingMigrationError (Migrations are pending; run 'bin/rake db:migrate RAILS_ENV=development' to resolve this issue.):
+  activerecord (4.0.3) lib/active_record/migration.rb:379:in `check_pending!'
+  activerecord (4.0.3) lib/active_record/migration.rb:366:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.3) lib/active_support/callbacks.rb:373:in `_run__3190070825595870583__call__callbacks'
+  activesupport (4.0.3) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (5.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTickets (20140223220653)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "seat_id_seq" varchar(255), "address" text, "price_paid" decimal, "email_address" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140223220653"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:11:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 468ms (Views: 449.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:11:12 -0500
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:11:34 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (53.4ms)
+  Rendered tickets/new.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 68ms (Views: 63.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Alan Longmuit", "seat_id_seq"=>"1A", "address"=>"37 Newbury Road, Ashfield, MA", "price_paid"=>"60", "email_address"=>"alan@shangland.com"}, "commit"=>"Create Ticket"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (30.4ms)[0m  INSERT INTO "tickets" ("address", "created_at", "email_address", "name", "price_paid", "seat_id_seq", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["address", "37 Newbury Road, Ashfield, MA"], ["created_at", Sun, 23 Feb 2014 22:12:14 UTC +00:00], ["email_address", "alan@shangland.com"], ["name", "Alan Longmuit"], ["price_paid", #<BigDecimal:7f3a546c10c0,'0.6E2',9(18)>], ["seat_id_seq", "1A"], ["updated_at", Sun, 23 Feb 2014 22:12:14 UTC +00:00]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 40ms (ActiveRecord: 35.2ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:14 -0500
+
+
+Started GET "/tickets/1/edit" for 127.0.0.1 at 2014-02-23 17:12:19 -0500
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/_form.html.erb (4.4ms)
+  Rendered tickets/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tickets/1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "address"=>"37 Newbury Road, Ashfield, MA", "price_paid"=>"60", "email_address"=>"alan@shangland.com"}, "commit"=>"Update Ticket", "id"=>"1"}
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "tickets" SET "name" = ?, "updated_at" = ? WHERE "tickets"."id" = 1  [["name", "Alan Longmuir"], ["updated_at", Sun, 23 Feb 2014 22:12:27 UTC +00:00]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 17ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:12:27 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:12:30 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:12:33 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (7.5ms)
+  Rendered tickets/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Gordon Clark", "seat_id_seq"=>"43G", "address"=>"17 Tudor St, Cambridge, MA", "price_paid"=>"35", "email_address"=>"gclark@rollermail.com"}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tickets" ("address", "created_at", "email_address", "name", "price_paid", "seat_id_seq", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "17 Tudor St, Cambridge, MA"], ["created_at", Sun, 23 Feb 2014 22:13:14 UTC +00:00], ["email_address", "gclark@rollermail.com"], ["name", "Gordon Clark"], ["price_paid", #<BigDecimal:7f3a44143e00,'0.35E2',9(18)>], ["seat_id_seq", "43G"], ["updated_at", Sun, 23 Feb 2014 22:13:14 UTC +00:00]]
+  [1m[35m (10.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tickets/2
+Completed 302 Found in 15ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/tickets/2" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered tickets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:13:14 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:13:18 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:13:20 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (7.1ms)
+  Rendered tickets/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Bobbi Lyall", "seat_id_seq"=>"54C", "address"=>"9 Main Street, Provincetown, MA", "price_paid"=>"43", "email_address"=>"blyall@baycity.org"}, "commit"=>"Create Ticket"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "tickets" ("address", "created_at", "email_address", "name", "price_paid", "seat_id_seq", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["address", "9 Main Street, Provincetown, MA"], ["created_at", Sun, 23 Feb 2014 22:14:22 UTC +00:00], ["email_address", "blyall@baycity.org"], ["name", "Bobbi Lyall"], ["price_paid", #<BigDecimal:7f3a482088f0,'0.43E2',9(18)>], ["seat_id_seq", "54C"], ["updated_at", Sun, 23 Feb 2014 22:14:22 UTC +00:00]]
+  [1m[36m (11.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tickets/3
+Completed 302 Found in 17ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/tickets/3" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered tickets/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:14:22 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:14:25 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:14:27 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (3.7ms)
+  Rendered tickets/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Eric Manclark", "seat_id_seq"=>"7H", "address"=>"1326 Mass Ave, Cambridge, MA", "price_paid"=>"37", "email_address"=>"eric@mananamail.org"}, "commit"=>"Create Ticket"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tickets" ("address", "created_at", "email_address", "name", "price_paid", "seat_id_seq", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["address", "1326 Mass Ave, Cambridge, MA"], ["created_at", Sun, 23 Feb 2014 22:15:13 UTC +00:00], ["email_address", "eric@mananamail.org"], ["name", "Eric Manclark"], ["price_paid", #<BigDecimal:7f3a549f04f8,'0.37E2',9(18)>], ["seat_id_seq", "7H"], ["updated_at", Sun, 23 Feb 2014 22:15:13 UTC +00:00]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/tickets/4
+Completed 302 Found in 16ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/tickets/4" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered tickets/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:15:13 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:15:23 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:15:25 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (3.8ms)
+  Rendered tickets/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tickets" for 127.0.0.1 at 2014-02-23 17:16:04 -0500
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Nelly Henderson", "seat_id_seq"=>"88J", "address"=>"685 Tremont St. Boston, MA", "price_paid"=>"64", "email_address"=>"nelly@bybybaby.com"}, "commit"=>"Create Ticket"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tickets" ("address", "created_at", "email_address", "name", "price_paid", "seat_id_seq", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["address", "685 Tremont St. Boston, MA"], ["created_at", Sun, 23 Feb 2014 22:16:04 UTC +00:00], ["email_address", "nelly@bybybaby.com"], ["name", "Nelly Henderson"], ["price_paid", #<BigDecimal:7f3a54cd4fe8,'0.64E2',9(18)>], ["seat_id_seq", "88J"], ["updated_at", Sun, 23 Feb 2014 22:16:04 UTC +00:00]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tickets/5
+Completed 302 Found in 19ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/tickets/5" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "5"]]
+  Rendered tickets/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:16:05 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:16:09 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.5ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:36:12 -0500
+
+
+Started GET "/tickets/new" for 127.0.0.1 at 2014-02-23 17:36:19 -0500
+Processing by TicketsController#new as HTML
+  Rendered tickets/_form.html.erb (4.0ms)
+  Rendered tickets/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (1.0ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 17:39:38 -0500
+
+
+Started GET "/tickets/2/edit" for 127.0.0.1 at 2014-02-23 17:39:40 -0500
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered tickets/_form.html.erb (7.4ms)
+  Rendered tickets/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tickets/2" for 127.0.0.1 at 2014-02-23 17:39:45 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered tickets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhoneToTickets (20140223225048)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "tickets" ADD "phone" varchar(255)[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140223225048"]]
+  [1m[36m (32.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 99ms (Views: 79.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:07:28 -0500
+
+
+Started GET "/tickets/1/edit" for 127.0.0.1 at 2014-02-23 18:07:37 -0500
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/_form.html.erb (45.7ms)
+  Rendered tickets/edit.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/tickets/1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "address"=>"37 Newbury Road, Ashfield, MA", "price_paid"=>"60", "email_address"=>"alan@shangland.com", "phone"=>"(508) 555-6722"}, "commit"=>"Update Ticket", "id"=>"1"}
+  [1m[35mTicket Load (1.9ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+Unpermitted parameters: phone
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:00 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:08:07 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.4ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.5ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:36 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.5ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:08:39 -0500
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 18:08:49 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:13:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 97ms (Views: 77.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tickets/1/edit" for 127.0.0.1 at 2014-02-23 18:14:05 -0500
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.5ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/_form.html.erb (36.1ms)
+  Rendered tickets/edit.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/tickets/1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "address"=>"37 Newbury Road, Ashfield, MA", "price_paid"=>"60", "email_address"=>"alan@shangland.com", "phone"=>"(508) 555-6722"}, "commit"=>"Update Ticket", "id"=>"1"}
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+Unpermitted parameters: phone
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.1ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:14:16 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:22:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 95ms (Views: 76.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tickets/1/edit" for 127.0.0.1 at 2014-02-23 18:22:53 -0500
+Processing by TicketsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTicket Load (0.6ms)[0m  [1mSELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered tickets/_form.html.erb (35.8ms)
+  Rendered tickets/edit.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 55ms (Views: 44.7ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/tickets/1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+Processing by TicketsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xJpYeGm6r5zdH9Icea5NIXQv2DfsbXeziESOVdWVb8I=", "ticket"=>{"name"=>"Alan Longmuir", "seat_id_seq"=>"1A", "address"=>"37 Newbury Road, Ashfield, MA", "price_paid"=>"60", "email_address"=>"alan@shangland.com", "phone"=>"(508) 555-6722"}, "commit"=>"Update Ticket", "id"=>"1"}
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  UPDATE "tickets" SET "phone" = ?, "updated_at" = ? WHERE "tickets"."id" = 1  [["phone", "(508) 555-6722"], ["updated_at", Sun, 23 Feb 2014 23:23:03 UTC +00:00]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tickets/1
+Completed 302 Found in 26ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/tickets/1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+Processing by TicketsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTicket Load (0.2ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered tickets/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:23:03 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:23:09 -0500
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.3ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to Event (20140223232643)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140223232643"]]
+  [1m[35m (5.2ms)[0m  commit transaction
+Migrating to CreateEvents (20140223232921)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "artist" varchar(255), "description" text, "price_low" decimal, "price_high" decimal, "event_date" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140223232921"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by TicketsController#index as HTML
+  [1m[36mTicket Load (0.2ms)[0m  [1mSELECT "tickets".* FROM "tickets"[0m
+  Rendered tickets/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 193ms (Views: 189.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:08 -0500
+
+
+Started GET "/tickets" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+Processing by TicketsController#index as HTML
+  [1m[35mTicket Load (0.3ms)[0m  SELECT "tickets".* FROM "tickets"
+  Rendered tickets/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:10 -0500
+
+
+Started GET "/events" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (2.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:15 -0500
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:16 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:30:16 -0500
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-02-23 18:30:19 -0500
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.erb (42.9ms)
+  Rendered events/new.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 53ms (Views: 49.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+Processing by EventsController#new as HTML
+  Rendered events/_form.html.erb (15.4ms)
+  Rendered events/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2014-02-23 18:35:40 -0500
+
+
+Started GET "/events" for 127.0.0.1 at 2014-02-23 18:35:46 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms)
